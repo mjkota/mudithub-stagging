@@ -15,6 +15,13 @@ body {
   color: var(--text);
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 header {
@@ -73,4 +80,69 @@ footer {
   color: #888;
   padding: 2rem 0 1rem 0;
   font-size: 0.95em;
+  flex-shrink: 0;
+}
+
+.timeline-box {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(45,58,75,0.08);
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.timeline-box::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  bottom: 30px;
+  width: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.15;
+}
+
+.marvel-story h2, .marvel-story h3 {
+  margin-left: 2.5rem;
+}
+
+.marvel-story ul, .marvel-story ol, .marvel-story p {
+  margin-left: 3.5rem;
+}
+
+.marvel-story strong {
+  color: var(--accent);
+}
+
+.marvel-story ul li, .marvel-story ol li {
+  position: relative;
+  margin-bottom: 0.7em;
+  padding-left: 1.2em;
+}
+
+.marvel-story ul li::before, .marvel-story ol li::before {
+  content: '';
+  position: absolute;
+  left: -2.2em;
+  top: 0.5em;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #fff;
+  border: 2px solid #fff;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .timeline-box {
+    padding: 1.2rem 0.5rem;
+  }
+  .marvel-story h2, .marvel-story h3, .marvel-story ul, .marvel-story ol, .marvel-story p {
+    margin-left: 1.2rem;
+  }
 } 
