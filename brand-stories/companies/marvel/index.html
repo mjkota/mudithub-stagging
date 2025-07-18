@@ -8,34 +8,15 @@
     <link rel="icon" href="/business-comeback-stories/favicon.ico" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
             color: white;
             overflow-x: hidden;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 10;
-        }
-        
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; position: relative; }
+        .header { text-align: center; margin-bottom: 60px; position: relative; z-index: 10; }
         .marvel-logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 4rem;
@@ -49,24 +30,12 @@
             text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
             margin-bottom: 20px;
         }
-        
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            color: #b8b8b8;
-            margin-bottom: 10px;
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
+        .subtitle { font-size: 1.5rem; color: #b8b8b8; margin-bottom: 10px; }
+        .timeline { position: relative; max-width: 900px; margin: 0 auto; }
         .timeline::before {
             content: '';
             position: absolute;
@@ -78,7 +47,6 @@
             transform: translateX(-50%);
             border-radius: 2px;
         }
-        
         .timeline-item {
             position: relative;
             margin: 40px 0;
@@ -89,22 +57,12 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
         .timeline-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(255, 107, 107, 0.2);
         }
-        
-        .timeline-item:nth-child(odd) {
-            margin-right: 50%;
-            margin-left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            margin-left: 50%;
-            margin-right: 0;
-        }
-        
+        .timeline-item:nth-child(odd) { margin-right: 50%; margin-left: 0; }
+        .timeline-item:nth-child(even) { margin-left: 50%; margin-right: 0; }
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -116,15 +74,8 @@
             top: 50%;
             transform: translateY(-50%);
         }
-        
-        .timeline-item:nth-child(odd)::before {
-            right: -60px;
-        }
-        
-        .timeline-item:nth-child(even)::before {
-            left: -60px;
-        }
-        
+        .timeline-item:nth-child(odd)::before { right: -60px; }
+        .timeline-item:nth-child(even)::before { left: -60px; }
         .year {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
@@ -132,20 +83,8 @@
             color: #ff6b6b;
             margin-bottom: 15px;
         }
-        
-        .event-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #4ecdc4;
-        }
-        
-        .event-description {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #e0e0e0;
-        }
-        
+        .event-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: #4ecdc4; }
+        .event-description { font-size: 1rem; line-height: 1.6; color: #e0e0e0; }
         .highlight {
             background: linear-gradient(45deg, #ff6b6b, #ffd93d);
             -webkit-background-clip: text;
@@ -153,14 +92,12 @@
             -webkit-text-fill-color: transparent;
             font-weight: 700;
         }
-        
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
-        
         .stat-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
@@ -170,12 +107,10 @@
             text-align: center;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        
         .stat-card:hover {
             transform: scale(1.05);
             border-color: rgba(255, 107, 107, 0.8);
         }
-        
         .stat-number {
             font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
@@ -183,12 +118,7 @@
             color: #ff6b6b;
             margin-bottom: 10px;
         }
-        
-        .stat-label {
-            font-size: 1.2rem;
-            color: #b8b8b8;
-        }
-        
+        .stat-label { font-size: 1.2rem; color: #b8b8b8; }
         .particles {
             position: absolute;
             top: 0;
@@ -198,7 +128,6 @@
             pointer-events: none;
             z-index: 1;
         }
-        
         .particle {
             position: absolute;
             width: 4px;
@@ -207,12 +136,10 @@
             border-radius: 50%;
             animation: float 6s infinite ease-in-out;
         }
-        
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
-        
         .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
         .particle:nth-child(2) { left: 20%; animation-delay: 1s; background: #4ecdc4; }
         .particle:nth-child(3) { left: 30%; animation-delay: 2s; background: #45b7d1; }
@@ -222,37 +149,14 @@
         .particle:nth-child(7) { left: 70%; animation-delay: 1.5s; background: #4ecdc4; }
         .particle:nth-child(8) { left: 80%; animation-delay: 2.5s; background: #45b7d1; }
         .particle:nth-child(9) { left: 90%; animation-delay: 3.5s; background: #ffd93d; }
-        
         @media (max-width: 768px) {
-            .marvel-logo {
-                font-size: 2.5rem;
-            }
-            
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                margin-left: 30px;
-                margin-right: 0;
-            }
-            
-            .timeline::before {
-                left: 15px;
-            }
-            
-            .timeline-item::before {
-                left: -25px !important;
-            }
-            
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
+            .marvel-logo { font-size: 2.5rem; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { margin-left: 30px; margin-right: 0; }
+            .timeline::before { left: 15px; }
+            .timeline-item::before { left: -25px !important; }
+            .stats-container { grid-template-columns: 1fr; }
         }
-
-        .marvel-story,
-        .marvel-story * {
-            font-family: 'Roboto', sans-serif;
-            color: #e0e0e0;
-        }
-
+        .marvel-story, .marvel-story * { font-family: 'Roboto', sans-serif; color: #e0e0e0; }
         .marvel-story {
             background: rgba(255, 255, 255, 0.07);
             border: 1.5px solid rgba(255, 255, 255, 0.13);
@@ -265,44 +169,31 @@
             margin-right: auto;
             box-shadow: 0 6px 32px 0 rgba(0,0,0,0.13);
         }
-
         .marvel-story h2, .marvel-story h3 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
             color: #ff6b6b;
             margin-bottom: 16px;
         }
-
         .marvel-story h3 {
             color: #ffd93d;
             font-size: 1.15rem;
             font-weight: 700;
             margin-top: 28px;
         }
-
-        .marvel-story ul,
-        .marvel-story ol {
+        .marvel-story ul, .marvel-story ol {
             margin: 16px 0 16px 0;
             padding-left: 24px;
             list-style-position: inside;
         }
-
         .marvel-story li {
             margin-bottom: 8px;
             line-height: 1.6;
             font-size: 1.08rem;
             color: #e0e0e0;
         }
-
-        .marvel-story strong {
-            color: #4ecdc4;
-            font-weight: 700;
-        }
-
-        .marvel-story p {
-            margin-bottom: 14px;
-            line-height: 1.7;
-        }
+        .marvel-story strong { color: #4ecdc4; font-weight: 700; }
+        .marvel-story p { margin-bottom: 14px; line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -317,13 +208,11 @@
         <div class="particle"></div>
         <div class="particle"></div>
     </div>
-    
     <div class="container">
         <header class="header">
             <div class="marvel-logo">MARVEL</div>
             <div class="subtitle">From Bankruptcy to Box Office King</div>
         </header>
-        
         <main>
             <div id="story-section"></div>
             <script>
@@ -342,7 +231,6 @@
                         Stock price crashed 93% (from $35.75 to $2.38) as the comic book industry faced a major crisis.
                     </div>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="year">2008</div>
                     <div class="event-title">The Gamble</div>
@@ -351,7 +239,6 @@
                         starring Robert Downey Jr. A risky bet that would change everything.
                     </div>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="year">August 2009</div>
                     <div class="event-title">The Acquisition</div>
@@ -360,7 +247,6 @@
                         recognizing the potential of the Marvel Cinematic Universe. Deal completed in December 2009.
                     </div>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="year">2012</div>
                     <div class="event-title">The Breakthrough</div>
@@ -369,7 +255,6 @@
                         proving the MCU concept and setting new box office records.
                     </div>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="year">2025</div>
                     <div class="event-title">The Empire</div>
@@ -379,18 +264,15 @@
                     </div>
                 </div>
             </div>
-            
             <div class="stats-container">
                 <div class="stat-card">
                     <div class="stat-number">$30B+</div>
                     <div class="stat-label">Total MCU Box Office</div>
                 </div>
-                
                 <div class="stat-card">
                     <div class="stat-number">33+</div>
                     <div class="stat-label">MCU Films Released</div>
                 </div>
-                
                 <div class="stat-card">
                     <div class="stat-number">8,000%</div>
                     <div class="stat-label">Return on Disney's Investment</div>
@@ -405,4 +287,4 @@
         </footer>
     </div>
 </body>
-</html>
+</html> 
