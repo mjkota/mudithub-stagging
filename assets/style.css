@@ -118,6 +118,11 @@ footer {
   color: var(--accent);
 }
 
+.marvel-story ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 .marvel-story ul li {
   position: relative;
   margin-bottom: 0.7em;
