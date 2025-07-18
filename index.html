@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inspiring business comeback stories: Marvel, Apple, Starbucks, Tesla, and more. Learn how these companies turned crisis into triumph.">
+    <title>From Crisis to Comeback: Business Legends</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4ecdc4, #45b7d1);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #b8b8b8;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .story-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 107, 0.6);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.2);
+        }
+
+        .story-card.available {
+            border-color: rgba(76, 175, 80, 0.6);
+        }
+
+        .story-card.available:hover {
+            border-color: rgba(76, 175, 80, 0.8);
+            box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
+        }
+
+        .story-card.coming-soon {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .story-card.coming-soon:hover {
+            transform: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .company-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+
+        .story-card.available .company-name {
+            color: #4caf50;
+        }
+
+        .story-preview {
+            font-size: 1rem;
+            color: #b8b8b8;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .story-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4ecdc4;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .status-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .available-badge {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .coming-soon-badge {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.5);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-text {
+            color: #888;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">From Crisis to Comeback: Business Legends</h1>
+            <p class="subtitle">From Bankruptcy to Billions</p>
+            <p class="description">
+                Explore the most inspiring corporate turnarounds in history.
+                These companies didn’t just survive their darkest moments—they transformed them into their greatest triumphs.
+            </p>
+        </header>
+        <main>
+            <div class="stories-grid">
+                <!-- Marvel Story -->
+                <a href="companies/marvel/" class="story-card available">
+                    <div class="company-name">MARVEL</div>
+                    <div class="story-preview">
+                        From $610M bankruptcy in 1996 to creating the highest-grossing film franchise ever.
+                        A masterclass in leveraging intellectual property during crisis.
+                    </div>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <div class="stat-number">$610M</div>
+                            <div class="stat-label">Debt in 1996</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$30B+</div>
+                            <div class="stat-label">MCU Box Office</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">93%</div>
+                            <div class="stat-label">Stock Crash</div>
+                        </div>
+                    </div>
+                    <div class="status-badge available-badge">📖 Read Story</div>
+                </a>
+
+                <!-- Apple Story - Coming Soon -->
+                <div class="story-card coming-soon">
+                    <div class="company-name">APPLE</div>
+                    <div class="story-preview">
+                        Near bankruptcy in 1997 to becoming the world's most valuable company.
+                        Steve Jobs' return and the iPod revolution that changed everything.
+                    </div>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <div class="stat-number">90 Days</div>
+                            <div class="stat-label">From Bankruptcy</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$3T</div>
+                            <div class="stat-label">Market Cap Peak</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">20 Years</div>
+                            <div class="stat-label">Transformation</div>
+                        </div>
+                    </div>
+                    <div class="status-badge coming-soon-badge">🚀 Coming Soon</div>
+                </div>
+
+                <!-- Starbucks Story - Coming Soon -->
+                <div class="story-card coming-soon">
+                    <div class="company-name">STARBUCKS</div>
+                    <div class="story-preview">
+                        From 2008 financial crisis and store closures to global coffee dominance.
+                        Howard Schultz's return and the digital transformation strategy.
+                    </div>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <div class="stat-number">600</div>
+                            <div class="stat-label">Stores Closed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">35K+</div>
+                            <div class="stat-label">Stores Today</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$32B</div>
+                            <div class="stat-label">Annual Revenue</div>
+                        </div>
+                    </div>
+                    <div class="status-badge coming-soon-badge">🚀 Coming Soon</div>
+                </div>
+
+                <!-- Tesla Story - Coming Soon -->
+                <div class="story-card coming-soon">
+                    <div class="company-name">TESLA</div>
+                    <div class="story-preview">
+                        From production hell and near-bankruptcy to leading the EV revolution.
+                        Elon Musk's bet on electric vehicles that transformed an industry.
+                    </div>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <div class="stat-number">3 Weeks</div>
+                            <div class="stat-label">From Bankruptcy</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$800B</div>
+                            <div class="stat-label">Market Cap Peak</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">20%</div>
+                            <div class="stat-label">EV Market Share</div>
+                        </div>
+                    </div>
+                    <div class="status-badge coming-soon-badge">🚀 Coming Soon</div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p class="footer-text">
+                <a href="https://linkedin.com/in/mjkota" style="color: #4ecdc4; text-decoration: none;" aria-label="Follow Mudit Jain on LinkedIn" target="_blank" rel="noopener noreferrer">Follow for More</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
